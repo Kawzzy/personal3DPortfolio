@@ -32,7 +32,7 @@ const FeedbackCard = ({
         </div>
         <img
           src={image}
-          alt={`feedback-by-${name}`}
+          alt={`feedback_by-${name}`}
           className="w-10 h-10 rounded-full object-cover"
         />
       </div>
@@ -42,7 +42,7 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className="mt-12 bg-clack-100 rounded-[20px]">
+    <div className="mt-12 bg-black-100 rounded-[20px]">
       <div
         className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}
       >
