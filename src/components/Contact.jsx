@@ -27,35 +27,38 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs.send(
-      "service_bj5hm7z",
-      "template_3egynli",
-      {
-        from_name: form.name,
-        to_name: "Augusto",
-        from_email: form.email,
-        to_email: "AuuKalaharyKW@gmail.com",
-        message: form.message,
-      },
-      "Rqug-hKyhEq52DIyo"
-    ).then(() => {
+    emailjs
+      .send(
+        "service_bj5hm7z",
+        "template_3egynli",
+        {
+          from_name: form.name,
+          to_name: "Augusto",
+          from_email: form.email,
+          to_email: "AuuKalaharyKW@gmail.com",
+          message: form.message,
+        },
+        "Rqug-hKyhEq52DIyo"
+      )
+      .then(
+        () => {
+          setLoading(false),
+            alert("Thank you! I'll get back to you as soon as possible.");
 
-      setLoading(false),
-      alert("Thank you! I'll get back to you as soon as possible.");
-      
-      setForm({
-        name: '',
-        email: '',
-        message: '',
-      })
-    }, (error) => {
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
 
-      setLoading(false)
-      
-      console.log(error)
-      
-      alert('Something went wrong!')
-    });
+          console.log(error);
+
+          alert("Something went wrong!");
+        }
+      );
   };
 
   return (
